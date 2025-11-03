@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <title>Tamo Junto｜GKオンラインコーチング</title>
-<meta name="description" content="あなたのためだけのゴレイロコーチ。現役FリーグGKが動画添削（無制限）・月1回Zoom（40分）・相談し放題で伴走。月額5,000円を中心に3プラン。地方や部活でコーチがいなくても、上達の道を一緒に見つけます。" />
+<meta name="description" content="現役FリーグGKが伴走。動画添削（無制限）・月1回Zoom・相談し放題。月額5,000円。指導の場がないGKのためのオンラインコーチング。" />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;800&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
@@ -27,7 +27,7 @@
   .divider-slant{height:56px;background:linear-gradient(90deg,transparent,rgba(14,165,233,.08),transparent);transform:skewY(-2deg)}
   /* ヘッダー */
   .hdr{position:fixed;top:0;left:0;right:0;z-index:60;padding:.65rem 0;border-bottom:1px solid rgba(2,8,23,.06);transition:background .25s, color .25s, box-shadow .25s}
-  .hdr.scrolled{background:rgba(255,255,255,.9);backdrop-filter:saturate(120%) blur(8px);box-shadow:0 8px 18px rgba(2,8,23,.06)}
+  .hdr.scrolled{background:rgba(255,255,255,.85);backdrop-filter:saturate(120%) blur(8px);box-shadow:0 8px 18px rgba(2,8,23,.06)}
   /* 進捗バー */
   .progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--cta1),var(--cta2));width:0%;z-index:70}
   /* ヒーロー背景 */
@@ -40,10 +40,9 @@
   }
   .hero::after{
     content:""; position:absolute; inset:-40% -20% auto -20%; height:140%;
-    background:conic-gradient(from 0deg at 50% 50%, rgba(14,165,233,.12), rgba(99,102,241,.12), rgba(34,211,238,.12), rgba(14,165,233,.12));
-    filter:blur(60px); animation:spin 18s linear infinite;
+    background:url('https://i.postimg.cc/4dHGw50D/image.png') center/60% no-repeat;
+    opacity:.06; filter:blur(2px);
   }
-  @keyframes spin{to{transform:rotate(360deg)}}
   /* モーション（共通） */
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
   .reveal.visible{opacity:1;transform:translateY(0)}
@@ -69,14 +68,9 @@
   /* CTAセクション */
   .cta-section{background:radial-gradient(60% 80% at 50% 30%, rgba(14,165,233,.32), rgba(99,102,241,.28) 40%, rgba(14,165,233,.18) 70%, transparent), linear-gradient(180deg,#0ea5e9,#0b58a1)}
   .cta-section .btn{box-shadow:0 18px 40px rgba(255,255,255,.22)}
-  /* ヒーロー背景ロゴ制御 */
-  .hero-logo-bg{max-height: 78vh; object-fit: contain;}
-  @media (max-width: 768px){
-    .hero-logo-bg{opacity:.10; width: clamp(320px, 78vw, 520px);}
-  }
   /* Reduce Motion */
   @media (prefers-reduced-motion:reduce){
-    .hero::after, .track{animation:none}
+    .hero::after{animation:none}
     .reveal{transition:none}
   }
 </style>
@@ -85,20 +79,19 @@
 
 <div id="progress" class="progress"></div>
 
-<!-- ===== HEADER ===== -->
 <header id="hdr" class="hdr">
   <div class="max-w-6xl mx-auto px-4 flex items-center justify-between">
-    <a href="#" class="flex items-center gap-3">
-      <img src="https://i.postimg.cc/4dHGw50D/image.png" alt="Tamo Junto ロゴ" class="h-8 w-8 md:h-9 md:w-9 object-contain select-none" loading="eager" decoding="async" />
+    <div class="flex items-center gap-3">
+      <img src="https://i.postimg.cc/4dHGw50D/image.png" alt="Tamo Junto ロゴ" class="h-8 w-8 object-contain" loading="eager">
       <div class="leading-tight">
-        <div class="text-base md:text-lg font-extrabold tracking-tight">Tamo Junto</div>
-        <div class="text-[11px] md:text-xs text-slate-500 -mt-0.5">online coaching</div>
+        <span class="text-lg md:text-xl font-extrabold tracking-tight block">Tamo Junto</span>
+        <span class="text-xs text-slate-500 -mt-1 block">online coaching</span>
       </div>
-    </a>
+    </div>
     <nav class="hidden md:flex items-center gap-6 text-sm">
       <a href="#flow" class="hover:text-sky-700">始め方</a>
       <a href="#about" class="hover:text-sky-700">内容</a>
-      <a href="#benefits" class="hover:text-sky-700">ストーリー</a>
+      <a href="#benefits" class="hover:text-sky-700">オンラインの強み</a>
       <a href="#price" class="hover:text-sky-700">料金</a>
       <a href="#coach" class="hover:text-sky-700">コーチ</a>
       <a href="#voice" class="hover:text-sky-700">声</a>
@@ -107,14 +100,12 @@
     <a href="YOUR_GOOGLE_FORM_URL" class="btn text-xs md:text-sm">今すぐ体験を申し込む</a>
   </div>
 </header>
-<!-- ===== /HEADER ===== -->
 
-<!-- ===== HERO ===== -->
-<section class="section hero pt-24 md:pt-28 relative overflow-hidden">
+<section class="section hero pt-24 md:pt-28">
   <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-12 gap-8 items-center">
-    <div class="md:col-span-7 reveal relative z-10">
-      <h1 class="text-[28px] md:text-5xl font-extrabold leading-tight">
-        あなたのためだけの、<br />
+    <div class="md:col-span-7 reveal">
+      <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
+        あなたのためだけの、<br>
         <span class="text-sky-700">ゴレイロコーチ。</span>
       </h1>
       <p class="mt-4 text-lg text-slate-700">
@@ -125,26 +116,18 @@
         <a href="#flow" class="btn-ghost text-base">流れを見る</a>
       </div>
     </div>
-
-    <div class="md:col-span-5 reveal relative z-10">
-      <div class="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-slate-200">
-        <img src="https://i.postimg.cc/vTmWp4rH/image.png" alt="コーチ紹介イメージ" class="w-full h-full object-cover" loading="lazy" />
+    <div class="md:col-span-5 reveal">
+      <div class="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-slate-200 bg-white p-6 flex items-center justify-center">
+        <!-- ▼▼ FV右側：ロゴ画像に差し替え ▼▼ -->
+        <img src="https://i.postimg.cc/4dHGw50D/image.png" alt="Tamo Junto ロゴ" class="w-full h-[420px] object-contain" loading="eager" decoding="async">
+        <!-- ▲▲ 差し替えここまで ▲▲ -->
       </div>
     </div>
   </div>
-
-  <!-- 背景ロゴ -->
-  <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-[-6%] md:right-[-2%] flex items-center">
-    <img src="https://i.postimg.cc/4dHGw50D/image.png" alt="" class="hero-logo-bg select-none"
-         loading="eager" decoding="async"
-         style="width: clamp(360px, 42vw, 720px); opacity: .12; filter: blur(0.3px); transform: translateY(6%);" />
-  </div>
 </section>
-<!-- ===== /HERO ===== -->
 
 <div class="divider-slant"></div>
 
-<!-- ===== FLOW ===== -->
 <section id="flow" class="section bg-white">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-2xl md:text-3xl font-extrabold text-center reveal">はじめ方（かんたん3ステップ）</h2>
@@ -175,12 +158,11 @@
 
 <div class="divider-slant" style="background:linear-gradient(90deg,transparent,rgba(2,8,23,.06),transparent)"></div>
 
-<!-- ===== ABOUT (3本柱) ===== -->
 <section id="about" class="section bg-sky-50">
   <div class="max-w-6xl mx-auto px-4">
     <div class="text-center reveal">
       <h2 class="text-2xl md:text-3xl font-extrabold">3つの柱で、フルサポート</h2>
-      <p class="mt-2 text-slate-600">日々の練習から試合運びまで、オンラインで切れ目なく伴走。</p>
+      <p class="mt-2 text-slate-600">日々の練習から試合運びまで、オンラインで切れ目なく伴走します。</p>
     </div>
 
     <div class="mt-8 pillars">
@@ -211,7 +193,6 @@
   </div>
 </section>
 
-<!-- ===== STORY (benefits置換) ===== -->
 <section id="benefits" class="section bg-white">
   <div class="max-w-6xl mx-auto px-4">
     <div class="text-center reveal">
@@ -221,7 +202,9 @@
       <p class="text-slate-700 leading-relaxed">
         動画で見返しても、正解が分からない。練習を重ねても、課題が曖昧なまま。
       </p>
-      <p class="mt-4 text-slate-700 leading-relaxed">僕もずっとそうでした。</p>
+      <p class="mt-4 text-slate-700 leading-relaxed">
+        僕もずっとそうでした。
+      </p>
       <p class="mt-4 text-slate-700 leading-relaxed">
         コーチがいない環境で“独学”に限界を感じたとき、一番ほしかったのは「自分のプレーを見てくれる人」でした。
       </p>
@@ -229,27 +212,32 @@
         あなたには、その環境を最初から用意したい。現役FリーグGKが“あなた専属コーチ”として、成長の道を一緒に見つけていきます。
       </p>
     </div>
-
     <div class="max-w-xl mx-auto mt-12 reveal">
       <div class="card">
         <h3 class="font-bold text-lg">サポート方針</h3>
         <ul class="mt-4 text-slate-700 space-y-3">
-          <li class="flex items-start gap-3"><span class="text-sky-500 font-bold mt-1">✓</span><div><strong>返信は原則48時間以内</strong></div></li>
-          <li class="flex items-start gap-3"><span class="text-sky-500 font-bold mt-1">✓</span><div>あなたのプレースタイルに合わせて改善します</div></li>
-          <li class="flex items-start gap-3"><span class="text-sky-500 font-bold mt-1">✓</span><div>あなただけの専属ゴレイロコーチとしてサポートします</div></li>
+          <li class="flex items-start gap-3">
+            <span class="text-sky-500 font-bold mt-1">✓</span>
+            <div><strong>返信は原則48時間以内</strong></div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-sky-500 font-bold mt-1">✓</span>
+            <div>あなたのプレースタイルに合わせて改善します</div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-sky-500 font-bold mt-1">✓</span>
+            <div>あなただけの専属ゴレイロコーチとしてサポートします</div>
+          </li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== PRICE ===== -->
 <section id="price" class="section bg-gradient-to-br from-white to-sky-50">
   <div class="max-w-6xl mx-auto px-4 text-center">
     <h2 class="text-2xl md:text-3xl font-extrabold reveal">料金</h2>
     <div class="grid md:grid-cols-3 gap-6 mt-8">
-
-      <!-- Basic -->
       <div class="card reveal">
         <div class="text-sm font-semibold text-slate-700">Basic｜ベーシック</div>
         <div class="mt-2 flex items-end justify-center gap-1">
@@ -264,8 +252,6 @@
           <a href="YOUR_GOOGLE_FORM_URL" class="btn w-full">今すぐ体験を申し込む</a>
         </div>
       </div>
-
-      <!-- Standard -->
       <div class="card border border-sky-100 reveal">
         <div class="text-sm font-semibold text-sky-700">Standard｜スタンダード</div>
         <div class="mt-2 flex items-end justify-center gap-1">
@@ -280,8 +266,6 @@
           <a href="YOUR_GOOGLE_FORM_URL" class="btn w-full">今すぐ体験を申し込む</a>
         </div>
       </div>
-
-      <!-- Premium -->
       <div class="card reveal">
         <div class="text-sm font-semibold text-slate-700">Premium｜プレミアム</div>
         <div class="mt-2 flex items-end justify-center gap-1">
@@ -301,13 +285,11 @@
   </div>
 </section>
 
-<!-- ===== COACH ===== -->
 <section id="coach" class="section bg-white">
   <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-12 gap-8 items-center">
     <div class="md:col-span-5 reveal">
       <div class="relative rounded-2xl overflow-hidden shadow-xl ring-1 ring-slate-200">
-        <img src="https://i.postimg.cc/vTmWp4rH/image.png" alt="コーチ：西 滉太（イメージ）" class="w-full h-full object-cover" loading="lazy">
-        <div class="absolute bottom-3 right-3 bg-black/55 text-white text-xs px-2 py-1 rounded">イメージ写真</div>
+        <img src="https://i.postimg.cc/vTmWp4rH/image.png" alt="コーチ紹介イメージ" class="w-full h-full object-contain bg-white" loading="lazy">
       </div>
     </div>
     <div class="md:col-span-7 reveal">
@@ -326,7 +308,6 @@
   </div>
 </section>
 
-<!-- ===== VOICE ===== -->
 <section id="voice" class="section bg-slate-50">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-2xl md:text-3xl font-extrabold text-center reveal">受講者の声</h2>
@@ -359,7 +340,6 @@
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
 <section id="faq" class="section bg-white">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-2xl md:text-3xl font-extrabold text-center reveal">よくある質問</h2>
@@ -376,7 +356,6 @@
   </div>
 </section>
 
-<!-- ===== CTA ===== -->
 <section class="section cta-section text-center text-white">
   <h2 class="text-2xl md:text-3xl font-extrabold reveal">上手くなりたい気持ちを、ずっと大切にしてほしい。</h2>
   <p class="mt-4 text-base reveal">
@@ -388,7 +367,6 @@
   </div>
 </section>
 
-<!-- ===== STICKY BAR ===== -->
 <div class="fixed bottom-3 inset-x-0 z-50">
   <div class="max-w-6xl mx-auto px-4">
     <div class="flex items-center justify-between gap-3 rounded-xl bg-white/90 backdrop-blur border border-slate-200 shadow-xl px-3 py-2">
@@ -400,7 +378,6 @@
   </div>
 </div>
 
-<!-- ===== FOOTER ===== -->
 <footer class="py-10 bg-slate-900 text-slate-300 text-center text-sm">
   <div>© <span id="y"></span> Tamo Junto / Nishi Kota</div>
   <div class="mt-2 text-xs">
@@ -415,11 +392,7 @@
   document.getElementById('y').textContent = new Date().getFullYear();
 
   // フェードイン
-  const io = new IntersectionObserver((es)=>{ 
-    es.forEach(e=>{ 
-      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} 
-    });
-  },{threshold:.12});
+  const io = new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
   // 進捗 & ヘッダー
@@ -441,7 +414,7 @@
 
   if (voiceCarousel && voicePrevBtn && voiceNextBtn) {
     const card = voiceCarousel.querySelector('.voice');
-    const scrollStep = card ? card.offsetWidth + 16 : 336; // gap-4=16px
+    const scrollStep = card ? card.offsetWidth + 16 : 336;
     voiceNextBtn.addEventListener('click', () => {
       voiceCarousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
     });
