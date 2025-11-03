@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>GKオンラインコーチング｜指導の場がないGKへ</title>
-<meta name="description" content="現役Fリーグ選手が伴走。動画添削（無制限）・月1回Zoom・相談し放題。月額5,000円。指導の場がないGKのためのオンラインコーチング。" />
+<title>あなたのためだけのゴレイロコーチ｜オンライン個別指導（3プラン）</title>
+<meta name="description" content="現役FリーグGKが“あなた専属”で伴走。動画添削（プラン別）・Zoom（40分）・相談し放題。月額3,000/5,000/10,000円。指導者がいなくても、環境がなくても、個別に上達へ。" />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;800&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
@@ -15,15 +15,18 @@
     --accent:#f59e0b;
   }
   body{font-family:'Noto Sans JP',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:var(--ink);background:white}
+  h1{ letter-spacing:-.01em; }
+  h2{ letter-spacing:-.005em; margin-bottom:.75rem; }
+  p{ line-height:1.75; }
   /* 基本UI */
-  .btn{background:linear-gradient(135deg,var(--cta1),var(--cta2),var(--cta3));background-size:200% 200%;
+  .btn{background:#0ea5e9;
       color:#fff;padding:.95rem 1.35rem;border-radius:1rem;font-weight:800;
-      box-shadow:0 14px 28px rgba(14,165,233,.25);transition:transform .15s, box-shadow .25s, background-position .6s}
-  .btn:hover{transform:translateY(-2px);box-shadow:0 18px 32px rgba(14,165,233,.35);background-position:100% 0}
+      box-shadow:0 6px 16px rgba(14,165,233,.25);transition:transform .15s, box-shadow .25s, background-color .6s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 18px 32px rgba(14,165,233,.35);background:#0284c7}
   .btn-ghost{font-weight:700;color:#075985}
   .card{background:#fff;border-radius:1.2rem;padding:1.6rem;box-shadow:0 14px 28px rgba(2,8,23,.06);border:1px solid rgba(2,8,23,.06);transform-style:preserve-3d;transition:transform .4s cubic-bezier(.2,.6,.2,1), box-shadow .4s}
   .card:hover{transform:translateY(-6px) rotateX(3deg) rotateY(-2deg);box-shadow:0 20px 36px rgba(2,8,23,.12)}
-  .section{padding:4.2rem 1rem}
+  .section{padding:3rem 1rem}
   .divider-slant{height:56px;background:linear-gradient(90deg,transparent,rgba(14,165,233,.08),transparent);transform:skewY(-2deg)}
   /* ヘッダー */
   .hdr{position:fixed;top:0;left:0;right:0;z-index:60;padding:.65rem 0;border-bottom:1px solid rgba(2,8,23,.06);transition:background .25s, color .25s, box-shadow .25s}
@@ -42,6 +45,7 @@
     content:""; position:absolute; inset:-40% -20% auto -20%; height:140%;
     background:conic-gradient(from 0deg at 50% 50%, rgba(14,165,233,.12), rgba(99,102,241,.12), rgba(34,211,238,.12), rgba(14,165,233,.12));
     filter:blur(60px); animation:spin 18s linear infinite;
+    display:none;
   }
   @keyframes spin{to{transform:rotate(360deg)}}
   /* モーション（共通） */
@@ -61,6 +65,7 @@
   .pillar{scroll-snap-align:center}
   @media(min-width:900px){
     .pillars{display:grid;grid-auto-flow:unset;grid-template-columns:repeat(3,1fr);overflow:visible}
+    .section{ padding:4rem 1rem; }
   }
   /* 受講者の声：カルーセル */
   .voice{min-width:320px;max-width:360px}
@@ -115,7 +120,7 @@
     </div>
     <div class="md:col-span-5 reveal">
       <div class="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-slate-200">
-        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1400&auto=format&fit=crop" alt="GKトレーニングのイメージ" class="w-full h-full object-cover" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1400&auto=format&fit=crop" alt="セービング練習中のゴレイロ" class="w-full h-full object-cover" loading="eager" decoding="async" fetchpriority="high" width="1400" height="980">
         <div class="absolute bottom-3 right-3 bg-black/55 text-white text-xs px-2 py-1 rounded">イメージ写真</div>
       </div>
     </div>
@@ -180,7 +185,7 @@
       </article>
 
       <article class="pillar card reveal">
-        <h3 class="font-bold text-lg text-sky-700">相談し放題（Slack／OC）</h3>
+        <h3 class="font-bold text-lg text-sky-700">相談し放題（Slack / オープンチャット）</h3>
         <p class="mt-2 text-slate-700 text-sm leading-relaxed">
           練習メニュー、用具、試合前後の準備まで。<span class="font-semibold">小さな疑問をその場で解決</span>して、歩みを止めません。
         </p>
@@ -237,7 +242,7 @@
       <div class="card reveal">
         <div class="text-sm font-semibold text-slate-700">Basic｜ベーシック</div>
         <div class="mt-2 flex items-end justify-center gap-1">
-          <div class="text-4xl font-extrabold">¥3,000</div><div class="text-slate-500">/ 月</div>
+          <div class="text-4xl font-extrabold">¥3,000</div><div class="text-slate-500"> / 月</div>
         </div>
         <ul class="mt-5 text-sm text-slate-700 space-y-2 text-left">
           <li>✓ 動画添削：3分以内 × 4本まで</li>
@@ -248,10 +253,10 @@
           <a href="YOUR_GOOGLE_FORM_URL" class="btn w-full">今すぐ体験を申し込む</a>
         </div>
       </div>
-      <div class="card border border-sky-100 reveal">
-        <div class="text-sm font-semibold text-sky-700">Standard｜スタンダード</div>
+      <div class="card reveal ring-2 ring-sky-300 border-sky-200 scale-[1.02]">
+        <div class="text-sm font-semibold text-sky-700">Standard｜スタンダード（おすすめ）</div>
         <div class="mt-2 flex items-end justify-center gap-1">
-          <div class="text-4xl font-extrabold">¥5,000</div><div class="text-slate-500">/ 月</div>
+          <div class="text-4xl font-extrabold">¥5,000</div><div class="text-slate-500"> / 月</div>
         </div>
         <ul class="mt-5 text-sm text-slate-700 space-y-2 text-left">
           <li>✓ 動画添削：2分以内 × 無制限</li>
@@ -265,7 +270,7 @@
       <div class="card reveal">
         <div class="text-sm font-semibold text-slate-700">Premium｜プレミアム</div>
         <div class="mt-2 flex items-end justify-center gap-1">
-          <div class="text-4xl font-extrabold">¥10,000</div><div class="text-slate-500">/ 月</div>
+          <div class="text-4xl font-extrabold">¥10,000</div><div class="text-slate-500"> / 月</div>
         </div>
         <ul class="mt-5 text-sm text-slate-700 space-y-2 text-left">
           <li>✓ 動画添削：時間制限なし × 無制限</li>
@@ -285,7 +290,7 @@
   <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-12 gap-8 items-center">
     <div class="md:col-span-5 reveal">
       <div class="relative rounded-2xl overflow-hidden shadow-xl ring-1 ring-slate-200">
-        <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=1200&auto=format&fit=crop" alt="コーチ：西 滉太（イメージ）" class="w-full h-full object-cover" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=1200&auto=format&fit=crop" alt="コーチの西滉太選手" class="w-full h-full object-cover" loading="lazy">
         <div class="absolute bottom-3 right-3 bg-black/55 text-white text-xs px-2 py-1 rounded">イメージ写真</div>
       </div>
     </div>
@@ -324,12 +329,12 @@
         <div class="card voice snap-center flex-shrink-0"><p class="text-sm text-slate-700">「試合前の準備とメンタルの整え方が分かり、落ち着いてプレーできるようになった。」</p><div class="mt-3 text-xs text-slate-500">社会人GK / Bさん</div></div>
         <div class="card voice snap-center flex-shrink-0"><p class="text-sm text-slate-700">「Zoomで毎月整理できる。次に何をするかが毎回明確。」</p><div class="mt-3 text-xs text-slate-500">中学GK / Cさん</div></div>
         <div class="card voice snap-center flex-shrink-0"><p class="text-sm text-slate-700">「動画の返答が早く、ポイントが短くて分かりやすい。」</p><div class="mt-3 text-xs text-slate-500">大学GK / Dさん</div></div>
-        <div class="card voice snap-center flex-shrink-0"><p class="text-sm text-slate-700">「一人で悩まなくなって、練習の狙いがはっきりした。」</p><div class="mt-3 text-xs text-slate-500">高校GK / Eさん</div></div>
+G       <div class="card voice snap-center flex-shrink-0"><p class="text-sm text-slate-700">「一人で悩まなくなって、練習の狙いがはっきりした。」</p><div class="mt-3 text-xs text-slate-500">高校GK / Eさん</div></div>
         <div class="card voice snap-center flex-shrink-0"><p class="text-sm text-slate-700">「判断の基準が分かってきて、安定感が増したと周りに言われた。」</p><div class="mt-3 text-xs text-slate-500">社会人GK / Fさん</div></div>
         <div class="card voice snap-center flex-shrink-0"><p class="text-sm text-slate-700">「失点後の切り替え方まで伴走。次の試合に引きずらなくなった。」</p><div class="mt-3 text-xs text-slate-500">高校GK / Gさん</div></div>
         <div class="card voice snap-center flex-shrink-0"><p class="text-sm text-slate-700">「用具や練習メニューの相談ができて、効率が上がった。」</p><div class="mt-3 text-xs text-slate-500">中学GK / Hさん</div></div>
         <div class="card voice snap-center flex-shrink-0"><p class="text-sm text-slate-700">「フォームを少し直しただけで、セービングの成功率が上がった。」</p><div class="mt-3 text-xs text-slate-500">大学GK / Iさん</div></div>
-D       <div class="card voice snap-center flex-shrink-0"><p class="text-sm text-slate-700">「部活の時間では足りない部分を、オンラインで補えた。」</p><div class="mt-3 text-xs text-slate-500">高校GK / Jさん</div></div>
+        <div class="card voice snap-center flex-shrink-0"><p class="text-sm text-slate-700">「部活の時間では足りない部分を、オンラインで補えた。」</p><div class="mt-3 text-xs text-slate-500">高校GK / Jさん</div></div>
         <div class="card voice snap-center flex-shrink-0"><p class="text-sm text-slate-700">「試合後にすぐ相談できるのがありがたい。次の練習が迷わず進む。」</p><div class="mt-3 text-xs text-slate-500">社会人GK / Kさん</div></div>
         <div class="card voice snap-center flex-shrink-0"><p class="text-sm text-slate-700">「基礎から整理できて、自信を持ってコーチングできるようになった。」</p><div class="mt-3 text-xs text-slate-500">中学GK / Lさん</div></div>
       </div>
@@ -370,7 +375,7 @@ D       <div class="card voice snap-center flex-shrink-0"><p class="text-sm t
       <div class="text-sm">
         <span class="font-extrabold">月5,000円</span>｜動画添削 無制限・Zoom月1回（40分）・相談し放題
       </div>
-      <a href="YOUR_GOOGLE_FORM_URL" class="btn text-sm">今すぐ体験を申し込む</a>
+    T <a href="YOUR_GOOGLE_FORM_URL" class="btn text-sm">今すぐ体験を申し込む</a>
     </div>
   </div>
 </div>
@@ -381,7 +386,7 @@ D       <div class="card voice snap-center flex-shrink-0"><p class="text-sm t
     <a href="/terms" class="hover:underline">利用規約</a> ｜ 
     <a href="/privacy" class="hover:underline">プライバシーポリシー</a> ｜ 
     <a href="/law" class="hover:underline">特定商取引法に基づく表示</a>
-  </div>
+s   </div>
 </footer>
 
 <script>
@@ -398,7 +403,7 @@ D       <div class="card voice snap-center flex-shrink-0"><p class="text-sm t
   const onScroll = () => {
     const h = document.documentElement;
     const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
-    bar.style.width = scrolled + '%';
+s     bar.style.width = scrolled + '%';
     hdr.classList.toggle('scrolled', h.scrollTop > 10);
   };
   document.addEventListener('scroll', onScroll, {passive:true});
